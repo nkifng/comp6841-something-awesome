@@ -1,0 +1,43 @@
+{% extends "encrypt_decrypt.html" %}
+{% block encryption %}
+    <form method="POST" action="/steganography/encode" enctype="multipart/form-data">
+        {{ form_enc.hidden_tag() }}
+        <fieldset class="form-group">
+            <div class="form-group">
+                {{ form_enc.message.label(class="form-control-label") }}
+                {{ form_enc.message(class="form-control") }}
+            </div>
+            <div class="form-group">
+                {{ form_enc.file.label(class="form-control-label") }}
+                {{ form_enc.file(class="form-control") }}
+            </div>
+        </fieldset>
+        <div class="form-group">
+            {{ form_enc.submit(class="btn btn-outline-info") }}
+        </div>
+    </form>
+{% endblock encryption %}
+
+{% block decryption %}
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <div class="alert alert-{{ category }}">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    <form method="POST" action="/steganography/decode" enctype="multipart/form-data">
+        {{ form_dec.hidden_tag() }}
+        <fieldset class="form-group">
+            <div class="form-group">
+                {{ form_dec.file.label(class="form-control-label") }}
+                {{ form_dec.file(class="form-control") }}
+            </div>
+        </fieldset>
+        <div class="form-group">
+            {{ form_dec.submit(class="btn btn-outline-info") }}
+        </div>
+    </form>
+{% endblock decryption %}

@@ -1,0 +1,8 @@
+{% extends "stego.html" %}
+{% block encryption %}
+    <a href="{{ url_for('download', filename=name) }}" download="">
+        <button class="btn btn-default btn-primary" align="center">
+            Download
+        </button>
+    </a>
+{% endblock encryption %}

@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="card-title">AES</h2>
+                        <p class="card-text">
+                            AES (Advanced Encryption Standard) is a symmetric key cipher which is currently the industry standard. It is a block cipher and uses multiple rounds of a substitution permutation network algorithm to encrypt data.
+                        </p>
+                        <a href="{{ url_for('aes') }}" class="btn btn-primary">Go</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="card-title">Triple DES</h2>
+                        <p class="card-text">
+                            Triple DES is a symmetric key cipher which uses the original Data Encryption Standard (DES) three times to encrypt data. It was used widely in the late nineties until it was superseded by AES. The small key of size of DES made it vulnerable to brute-force attacks and Triple DES was a simple method of increasing the security of the cipher, however, it is still not as secure as AES. 
+                        </p>
+                        <a href="{{ url_for('triple_des') }}" class="btn btn-primary">Go</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="card-title">RC4</h2>
+                        <p class="card-text">
+                            RC4 is a symmetric stream cipher and is one of the most commonly used stream ciphers. It is used in the Secure Socket Layer(SSL)/Transport Layer Security (TLS) protocols and Wi-Fi Security Protocl WEP due to its ease of use and performance speed. However, it does have severe vulnerabilities and cannot be used on tiny bits of data so it is not used widely anymore. 
+                        </p>
+                        <a href="{{ url_for('rc4') }}" class="btn btn-primary">Go</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center mb-5">
+            <div class="col-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="card-title">Chaos Map</h2>
+                        <p class="card-text">
+                            Chaotic systems are a sub-type of nonlinear dynamical systems and can produce unpredictable/chaotic behaviour over time. The logistic map is a type of chaos map which maps the population value at any time step to its value at the next time step.
+                        </p>
+                        <img class="card-img" src="https://miro.medium.com/max/1400/1*6x1wv0jyYDNrvgUja3TDRg.png" alt="Logistic Map Equation"/>
+                        <a href="{{ url_for('chaos_map') }}" class="btn btn-primary">Go</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="card-title">Steganography</h2>
+                        <p class="card-text">
+                            Image steganography is the art of hiding secret messages in images. The bits of the secret message are embedded into some of the pixels which make up the image. Since only one of the three RGB values are changed, the image looks the same before and after encoding. 
+                        </p>
+                        <a href="{{ url_for('steganography') }}" class="btn btn-primary">Go</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

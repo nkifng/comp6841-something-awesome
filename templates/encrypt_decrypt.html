@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+{% block content %}
+    <h1>{{ title }}</h1>
+
+    <!-- Encryption -->
+    <div class="row">
+        <div class="col-lg-6 col-md-6 mb-4">
+            <div class="card">
+                <div class="card-header">
+                    Encryption
+                </div>
+                <div class="card-body">
+                    {% block encryption %}
+                    {% endblock encryption %}
+                </div>
+            </div>
+        </div>
+
+        <!-- Decryption -->
+        <div class="col-lg-6 col-md-6 mb-4">
+            <div class="card">
+            <div class="card-header">
+                Decryption
+            </div>
+            <div class="card-body">
+                {% block decryption %}
+                {% endblock decryption %}
+            </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
