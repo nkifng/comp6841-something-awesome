@@ -17,7 +17,7 @@ def logisticKey(x, r, size):
 def chaos_map_encode(fileName):
     image = cv2.imread(fileName)
     height, width, _ = image.shape
-    generatedKey = logisticKey(0.04, 2.85, height * width) 
+    generatedKey = logisticKey(0.05, 3.85, height * width) 
     z = 0
     encryptedImage = np.zeros(shape=[height, width, 3], dtype=np.uint8)
     for i in range(height):
@@ -35,7 +35,7 @@ def chaos_map_decode(fileName):
     height, width, _ = image.shape
     z = 0
     decryptedImage = np.zeros(shape=[height, width, 3], dtype=np.uint8)
-    generatedKey = logisticKey(0.04, 2.85, height * width)
+    generatedKey = logisticKey(0.05, 3.85, height * width)
     for i in range(height):
         for j in range(width):
             # Using the XOR operation between encrypted image pixels and keys
