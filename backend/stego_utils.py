@@ -1,5 +1,8 @@
 import cv2
 
+# Used Erik W's code to help me write these functikons
+# https://dev.to/erikwhiting88/let-s-hide-a-secret-message-in-an-image-with-python-and-opencv-1jf5
+
 def charGenerator(message):
   for c in message:
     yield ord(c)
@@ -17,9 +20,9 @@ def encodeImage(fileName, message):
     for j in range(len(image[0])):
       if (i+1 * j+1) % pattern == 0:
         try:
-          image[i-1][j-1][0] = next(msg_gen)
+          image[i-1][j-1][1] = next(msg_gen)
         except StopIteration:
-          image[i-1][j-1][0] = 0
+          image[i-1][j-1][1] = 0
           return image
 
 def stego_encode(fileName, message):
@@ -35,7 +38,7 @@ def stego_decode(fileName):
   for i in range(len(image)):
     for j in range(len(image[0])):
       if (i-1 * j-1) % pattern == 0:
-        if image[i-1][j-1][0] != 0:
-          message = message + chr(image[i-1][j-1][0])
+        if image[i-1][j-1][1] != 0:
+          message = message + chr(image[i-1][j-1][1])
         else:
           return message

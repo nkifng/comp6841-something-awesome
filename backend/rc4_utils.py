@@ -1,4 +1,4 @@
-# pseudocode taken from Wikipedia
+# pseudocode taken from Wikipedia: https://en.wikipedia.org/wiki/RC4
 
 SIZE = 256
 
